@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TSP Solver - Result</title>
+</head>
+<body>
+  <h1>TSP Solver - Result</h1>
+  <p><strong>Problem Description:</strong> {{ response.problem_description }}</p>
+  <p><strong>Cities:</strong> {{ response.cities }}</p>
+  <p><strong>Distance Matrix:</strong></p>
+  <pre>{{ response.matrix }}</pre>
+  <p><strong>GPT-4o Solution:</strong> {{ response.llm_solution }}</p>
+  <p><strong>Optimal Solution (OR-Tools):</strong> {{ response.optimal_solution }}</p>
+  <p><strong>Iterations:</strong> {{ response.iterations }}</p>
+  {% if not response.correct %}
+    <p style="color:red;">LLM solution did not match the optimal solution. Correct route: {{ response.best_route }}</p>
+  {% else %}
+    <p style="color:green;">LLM solution matches the optimal solution!</p>
+  {% endif %}
+  <br>
+  <a href="/">Try another problem</a>
+</body>
+</html>

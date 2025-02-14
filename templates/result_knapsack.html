@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Knapsack Problem - Result</title>
+</head>
+<body>
+  <h1>Knapsack Problem - Result</h1>
+  
+  <p><strong>All Items (weight:value):</strong> {{ response.item_list }}</p>
+  <p><strong>Capacity:</strong> {{ response.capacity }}</p>
+  
+  <p><strong>GPT-4 Solution (selected indices):</strong> {{ response.llm_solution }}</p>
+  
+  <p><strong>OR-Tools Solution (selected items):</strong></p>
+  <ul>
+    {% for item in response.or_tools_solution_tuples %}
+      <li>Index: {{ item[0] }}, Weight: {{ item[1] }}, Value: {{ item[2] }}</li>
+    {% endfor %}
+  </ul>
+  
+  <p><strong>Iterations for Feedback Convergence:</strong> {{ response.iterations }}</p>
+  
+  {% if not response.correct %}
+    <p style="color:red;">The solutions do not match.</p>
+  {% else %}
+    <p style="color:green;">The solutions match!</p>
+  {% endif %}
+  
+  <br>
+  <a href="/knapsack">Try another knapsack problem</a>
+</body>
+</html>

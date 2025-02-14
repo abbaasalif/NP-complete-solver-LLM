@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Graph Coloring Problem Details</title>
+</head>
+<body>
+  <h1>Graph Coloring Problem</h1>
+  {% if error %}
+    <p style="color:red;">Error: {{ error }}</p>
+  {% endif %}
+  <form method="POST" action="/graph_coloring">
+    <p>Enter the graph's adjacency matrix (one row per line, comma-separated). Use 1 for an edge, 0 for no edge.</p>
+    <textarea name="matrix" rows="6" cols="50">
+0, 1, 1
+1, 0, 1
+1, 1, 0
+    </textarea><br><br>
+    <label for="num_colors">Number of colors:</label>
+    <input type="text" id="num_colors" name="num_colors"><br><br>
+    <input type="submit" value="Solve Graph Coloring">
+  </form>
+  <br>
+  <a href="/">Back to Home</a>
+</body>
+</html>

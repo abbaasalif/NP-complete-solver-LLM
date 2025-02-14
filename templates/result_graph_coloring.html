@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Graph Coloring Problem - Result</title>
+</head>
+<body>
+  <h1>Graph Coloring Problem - Result</h1>
+  <p><strong>Adjacency Matrix:</strong></p>
+  <pre>{{ response.adjacency_matrix }}</pre>
+  <p><strong>Number of Colors:</strong> {{ response.num_colors }}</p>
+  <p><strong>GPT-4 Solution:</strong> {{ response.llm_solution }}</p>
+  <p><strong>OR-Tools Solution:</strong> {{ response.or_tools_solution }}</p>
+  <p><strong>Feedback Iterations:</strong> {{ response.iterations }}</p>
+  {% if not response.correct %}
+    <p style="color:red;">The solutions do not match. OR-Tools produced: {{ response.or_tools_solution }}</p>
+  {% else %}
+    <p style="color:green;">The solutions match!</p>
+  {% endif %}
+  <br>
+  <a href="/graph_coloring">Try another graph coloring problem</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NP-Complete Solver Chat Agent</title>
+</head>
+<body>
+  <h1>NP-Complete Solver Chat Agent</h1>
+  {% if error %}
+    <p style="color:red;">Error: {{ error }}</p>
+  {% endif %}
+  <form method="POST">
+    <label for="description">Describe your NP-complete problem:</label><br>
+    <textarea id="description" name="description" rows="6" cols="50"></textarea><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  <br>
+  <p>Or directly choose one of the supported problems:</p>
+  <a href="/tsp">Traveling Salesman Problem (TSP)</a><br>
+  <a href="/knapsack">Knapsack Problem</a><br>
+  <a href="/graph_coloring">Graph Coloring Problem</a><br>
+</body>
+</html>

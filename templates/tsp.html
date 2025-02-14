@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TSP Details</title>
+</head>
+<body>
+  <h1>TSP Details</h1>
+  {% if error %}
+    <p style="color:red;">Error: {{ error }}</p>
+  {% endif %}
+  <form method="POST">
+    <label for="cities">Enter city names (comma-separated, default: A, B, C, D):</label><br>
+    <input type="text" id="cities" name="cities" value=""><br><br>
+    <label for="matrix">Enter distance matrix (one row per line, comma-separated):</label><br>
+    <textarea id="matrix" name="matrix" rows="6" cols="40">
+0, 10, 15, 20
+10, 0, 35, 25
+15, 35, 0, 30
+20, 25, 30, 0
+    </textarea><br><br>
+    <input type="submit" value="Solve TSP">
+  </form>
+  <br>
+  <a href="/">Back to Home</a>
+</body>
+</html>

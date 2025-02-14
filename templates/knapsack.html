@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Knapsack Problem Details</title>
+</head>
+<body>
+  <h1>Knapsack Problem</h1>
+  {% if error %}
+    <p style="color:red;">Error: {{ error }}</p>
+  {% endif %}
+  <p>Enter items as "weight:value; weight:value; ..." (e.g., "10:60; 20:100; 30:120")</p>
+  <form method="POST">
+    <textarea name="items" rows="4" cols="50"></textarea><br><br>
+    <label for="capacity">Capacity:</label>
+    <input type="text" id="capacity" name="capacity"><br><br>
+    <input type="submit" value="Solve Knapsack">
+  </form>
+  <br>
+  <a href="/">Back to Home</a>
+</body>
+</html>
